@@ -1,0 +1,206 @@
+/* Badge counters for header icons */
+.badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 1px 4px rgba(44,62,80,0.12);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 48px;
+    max-height: 120px;
+    min-width: 80px;
+    max-width: 350px;
+    padding: 0 8px;
+    background-color: transparent;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+}
+.logo-img {
+    display: block;
+    max-width: 100px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+    object-fit: contain;
+    padding: 0;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+    .logo {
+        min-height: 36px;
+        max-height: 60px;
+        min-width: 60px;
+        max-width: 120px;
+        padding: 0 4px;
+    }
+    .logo-img {
+        max-width: 90px;
+        max-height: 50px;
+    }
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.icons a {
+    color: #2c3e50;
+    margin-left: 15px;
+    font-size: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: none;
+    transition: color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.2s;
+    position: relative;
+    text-decoration: none;
+}
+
+.icons a:hover {
+    color: #fff;
+    background: #e74c3c;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.15);
+    transform: translateY(-2px) scale(1.08);
+}
+
+
+/* Style Font Awesome icons in header */
+.icons a i {
+    font-size: 1.3rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.icons a:hover i {
+    color: #fff;
+    transform: scale(1.15);
+}
+main {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+    padding: 40px 32px;
+    text-align: center;
+}
+main h1 {
+    font-size: 2.2rem;
+    color: #e74c3c;
+    margin-bottom: 18px;
+}
+main p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    margin-top: 40px;
+}
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+@media (max-width: 600px) {
+    .logo {
+        min-height: 36px;
+        max-height: 60px;
+        min-width: 60px;
+        max-width: 120px;
+        padding: 0 4px;
+    }
+    .logo-img {
+        max-width: 90px;
+        max-height: 50px;
+    }
+    nav ul {
+        gap: 10px;
+    }
+}
