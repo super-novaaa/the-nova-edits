@@ -47,7 +47,7 @@ the-nova-edits/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/super-novaaa/the-nova-edits.git
+   git clone https://github.com/devrizu/the-nova-edits.git
    ```
 
 2. Navigate to the project directory:
@@ -83,8 +83,8 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-[super-novaaa](https://github.com/super-novaaa)
+[devrizu](https://github.com/devrizu)
 
 ---
 
-**Last Updated:** February 26, 2026
+**Last Updated:** March 3, 2026
