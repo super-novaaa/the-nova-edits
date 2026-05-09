@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View your shopping cart at The Nova Edits.">
     <title>Shopping Cart - The Nova Edits</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="shopping-cart.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6eb67540cb.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -21,6 +25,12 @@
             <div id="cart-summary"></div>
         </div>
     </main>
+    <script src="products.js"></script>
     <script src="shopping-cart.js"></script>
+
+    <!-- Supabase & Session Management -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="session.js"></script>
 </body>
 </html>

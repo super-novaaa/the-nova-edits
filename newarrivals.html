@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Arrivals</title>
-    <link rel="stylesheet" href="newarrivals.css">
+    <meta name="description"
+        content="Check out the latest new arrivals at The Nova Edits. Premium fashion and latest trends for men.">
+    <title>New Arrivals - The Nova Edits</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6eb67540cb.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -14,21 +21,26 @@
             <div class="header-content">
                 <div class="logo">
                     <img class="logo-img" src="NewLogo.svg" alt="logo">
-                        <span class="logo-text">THE NOVA EDITS</span>
+                    <span class="logo-text">THE NOVA EDITS</span>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="newarrivals.html">New Arrivals</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="404.html">Collections</a></li>
+                        <li><a href="404.html">Categories</a></li>
+                        <li><a href="404.html">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="icons">
-                    <a href="#" class="user" aria-label="user"><i class="fa-solid fa-user"></i></a>
-                    <a href="#" class="search" aria-label="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#" class="favourite" aria-label="favourite">
+                    <button class="menu-toggle" aria-label="Toggle navigation menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a href="auth.html" class="user" aria-label="user" id="user-nav-link"><i
+                            class="fa-solid fa-user"></i></a>
+                    <a href="404.html" class="search" aria-label="search"><i
+                            class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="favourites.html" class="favourite" aria-label="favourite">
                         <i class="fa-solid fa-heart"></i>
                         <span class="badge favourite-badge">0</span>
                     </a>
@@ -41,17 +53,131 @@
         </div>
     </header>
 
-    <main>
-        <h1>New Arrivals</h1>
-        <p>Check out the latest additions to our collection!</p>
-        <!-- Add more content about new arrivals here -->
+    <main style="padding-top: 40px; padding-bottom: 40px;">
+        <section class="products">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-eyebrow">Curated Collection</span>
+                    <h2>New Arrivals</h2>
+                    <p style="color: var(--text-secondary); margin-top: 8px;">Check out the latest additions to our
+                        collection!</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <span class="favourite-icon" title="Add to favourites"><i
+                                    class="fa-regular fa-heart"></i></span>
+                            <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778303775/BomberJacket_cvqxq4.jpg"
+                                alt="Men's Bomber Jacket">
+                        </div>
+                        <div class="product-info">
+                            <h3>Bomber Jacket</h3>
+                            <p>Premium quality bomber jacket for men</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">$89.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <span class="favourite-icon" title="Add to favourites"><i
+                                    class="fa-regular fa-heart"></i></span>
+                            <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778307357/FormalShirt_nvt2jp.jpg"
+                                alt="Formal Shirt">
+                        </div>
+                        <div class="product-info">
+                            <h3>Formal Shirt</h3>
+                            <p>Classic fit formal shirt for office wear</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">$49.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-img">
+                            <span class="favourite-icon" title="Add to favourites"><i
+                                    class="fa-regular fa-heart"></i></span>
+                            <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778307355/SlimFitJeans_op6e31.jpg"
+                                alt="Casual Jeans">
+                        </div>
+                        <div class="product-info">
+                            <h3>Slim Fit Jeans</h3>
+                            <p>Comfortable slim fit jeans for everyday wear</p>
+                            <div class="product-price">
+                                <div>
+                                    <span class="price">$59.99</span>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 The Nova Edits. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>The Nova Edits</h3>
+                    <p>We offer the latest trends in men's fashion with quality products and exclusive designs.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" title="Facebook" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/devrizu" title="X" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/devrizu"
+                            title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.pinterest.com/" title="Pinterest" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="newarrivals.html">New Arrivals</a></li>
+                        <li><a href="404.html">Collections</a></li>
+                        <li><a href="404.html">Categories</a></li>
+                        <li><a href="404.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Refunds</a></li>
+                        <li><a href="404.html">Size Guide</a></li>
+                        <li><a href="404.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 128 Fashion St, Nova City, PIN - 789000025</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope"></i> mywebsite0088@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 The Nova Edits. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
-    
+    <script src="script.js"></script>
+
+    <!-- Supabase & Session Management -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="session.js"></script>
 </body>
+
 </html>

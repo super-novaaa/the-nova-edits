@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The Nova Edits - Premium fashion and latest trends for men. Shop our collection of high-quality clothing.">
     <title>The Nova Edits</title>
 
     <script src="https://kit.fontawesome.com/6eb67540cb.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-        <div id="dev-overlay">
-            <div id="dev-popup">
-                <div class="dev-popup-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <div class="dev-popup-title">This website is under development</div>
-                <button id="dev-accept">Continue</button>
-            </div>
+    <div id="dev-overlay">
+        <div id="dev-popup">
+            <div class="dev-popup-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="dev-popup-title">This website is under development</div>
+            <button id="dev-accept">Continue</button>
         </div>
+    </div>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
                     <img class="logo-img" src="NewLogo.svg" alt="logo">
-                        <span class="logo-text">THE NOVA EDITS</span>
+                    <span class="logo-text">THE NOVA EDITS</span>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="newarrivals.html">New Arrivals</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="404.html">Collections</a></li>
+                        <li><a href="404.html">Categories</a></li>
+                        <li><a href="404.html">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="icons">
-                    <a href="#" class="user" aria-label="user"><i class="fa-solid fa-user"></i></a>
-                    <a href="#" class="search" aria-label="search"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#" class="favourite" aria-label="favourite">
+                    <button class="menu-toggle" aria-label="Toggle navigation menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a href="auth.html" class="user" aria-label="user" id="user-nav-link"><i class="fa-solid fa-user"></i></a>
+                    <a href="404.html" class="search" aria-label="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="favourites.html" class="favourite" aria-label="favourite">
                         <i class="fa-solid fa-heart"></i>
                         <span class="badge favourite-badge">0</span>
                     </a>
@@ -53,16 +62,17 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Season Sale</h2>
-                <h1>Men's Fashion</h1>
-                <div class="sale-off">Min. 35-70% Off</div>
-                <div class="cta-buttons">
-                    <button class="btn btn-primary">SHOP NOW</button>
-                    <button class="btn btn-secondary">READ MORE</button>
-                </div>
+        <div class="hero-text-col">
+            <span class="section-eyebrow" style="margin-bottom: 24px;">SEASON SALE 2026</span>
+            <h1 class="hero-title">Men's <span style="font-style: italic;">Fashion</span></h1>
+            <div class="sale-off">Min. 35-70% Off</div>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">SHOP NOW</button>
+                <button class="btn btn-secondary">READ MORE</button>
             </div>
+        </div>
+        <div class="hero-image-col">
+            <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778303775/BomberJacket_cvqxq4.jpg" alt="Men's Fashion">
         </div>
     </section>
 
@@ -106,13 +116,16 @@
     <section class="products">
         <div class="container">
             <div class="section-title">
+                <span class="section-eyebrow">Curated Collection</span>
                 <h2>Featured Products</h2>
             </div>
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <span class="favourite-icon" title="Add to favourites"><i class="fa-regular fa-heart"></i></span>
-                        <img src="https://i.ibb.co/JWvYfGNr/Gemini-Generated-Image-oyxtgoyxtgoyxtgokj.png" alt="Men's Bomber Jacket">
+                        <span class="favourite-icon" title="Add to favourites"><i
+                                class="fa-regular fa-heart"></i></span>
+                        <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778303775/BomberJacket_cvqxq4.jpg"
+                            alt="Men's Bomber Jacket">
                     </div>
                     <div class="product-info">
                         <h3>Bomber Jacket</h3>
@@ -128,8 +141,10 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <span class="favourite-icon" title="Add to favourites"><i class="fa-regular fa-heart"></i></span>
-                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1036&q=80" alt="Formal Shirt">
+                        <span class="favourite-icon" title="Add to favourites"><i
+                                class="fa-regular fa-heart"></i></span>
+                        <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778307357/FormalShirt_nvt2jp.jpg"
+                            alt="Formal Shirt">
                     </div>
                     <div class="product-info">
                         <h3>Formal Shirt</h3>
@@ -145,8 +160,10 @@
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <span class="favourite-icon" title="Add to favourites"><i class="fa-regular fa-heart"></i></span>
-                        <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=0699&q=80" alt="Casual Jeans">
+                        <span class="favourite-icon" title="Add to favourites"><i
+                                class="fa-regular fa-heart"></i></span>
+                        <img src="https://res.cloudinary.com/dpjg1pyog/image/upload/v1778307355/SlimFitJeans_op6e31.jpg"
+                            alt="Casual Jeans">
                     </div>
                     <div class="product-info">
                         <h3>Slim Fit Jeans</h3>
@@ -169,10 +186,11 @@
         <div class="container">
             <h2>Subscribe to Our Newsletter</h2>
             <p>Stay updated with our latest trends and get exclusive offers</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address">
-                <button type="submit">Subscribe</button>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                <button type="submit" id="newsletter-submit">Subscribe</button>
             </form>
+            <div id="newsletter-message" style="margin-top: 12px; font-size: 0.95rem; font-weight: 500; font-family: 'Outfit', sans-serif;"></div>
         </div>
     </section>
 
@@ -184,10 +202,13 @@
                     <h3>The Nova Edits</h3>
                     <p>We offer the latest trends in men's fashion with quality products and exclusive designs.</p>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/share/19N2gRBPmB/" title="Facebook"><i class="fa-brands fa-facebook"></i></i></a>
-                        <a href="https://x.com/subhrakantibera?t=vrcMHzg3gZPHRH_RkTDDDg&s=08" title="X"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/curiousboy7878?utm_source=qr&igsh=MWF5c3VuNnE0Njl2cA==" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
-                        <a href="https://pin.it/5NeKpayF0" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="https://www.facebook.com/" title="Facebook" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com/devrizu" title="X" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/devrizu"
+                            title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.pinterest.com/" title="Pinterest" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -195,18 +216,18 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="newarrivals.html">New Arrivals</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="404.html">Collections</a></li>
+                        <li><a href="404.html">Categories</a></li>
+                        <li><a href="404.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Customer Service</h3>
                     <ul>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
-                        <li><a href="#">Size Guide</a></li>
-                        <li><a href="#">FAQs</a></li>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Refunds</a></li>
+                        <li><a href="404.html">Size Guide</a></li>
+                        <li><a href="404.html">FAQs</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -219,24 +240,29 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 The Nova Edits. All Rights Reserved.</p>
+                <p>&copy; 2026 The Nova Edits. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.getElementById('dev-overlay');
+            const acceptButton = document.getElementById('dev-accept');
+            overlay.style.display = 'flex';
+            document.body.classList.add('dev-blur');
+            acceptButton.addEventListener('click', function () {
+                overlay.style.display = 'none';
+                document.body.classList.remove('dev-blur');
+            });
+        });
+    </script>
+    
+    <!-- Supabase & Session Management -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="session.js"></script>
 </body>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const overlay = document.getElementById('dev-overlay');
-    const acceptButton = document.getElementById('dev-accept');
-    overlay.style.display = 'flex';
-    document.body.classList.add('dev-blur');
-    acceptButton.addEventListener('click', function() {
-        overlay.style.display = 'none';
-        document.body.classList.remove('dev-blur');
-    });
-});
-</script>
-</body>
+
 </html>

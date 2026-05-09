@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your Account at The Nova Edits.">
+    <title>Account Settings - The Nova Edits</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6eb67540cb.js" crossorigin="anonymous"></script>
+    <style>
+        .account-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            text-align: center;
+        }
+        .account-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            border: 3px solid var(--accent-primary);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--navy-primary);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+        .form-group input:disabled {
+            background: #f1f5f9;
+            color: #64748b;
+            cursor: not-allowed;
+        }
+        #save-btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+        #account-message {
+            margin-top: 15px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                <a href="index.html" class="logo" style="text-decoration: none;">
+                    <img class="logo-img" src="NewLogo.svg" alt="logo">
+                    <span class="logo-text">THE NOVA EDITS</span>
+                </a>
+                <a href="index.html" class="back-link" style="display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--navy-primary); text-decoration: none; padding: 8px 16px; background: #f1f5f9; border-radius: 24px; transition: background 0.2s;"><i class="fa-solid fa-arrow-left"></i> Back to Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="account-container">
+                <h2>Account Settings</h2>
+                
+                <img src="https://ui-avatars.com/api/?name=User" alt="Profile Picture" class="account-pic" id="account-pic">
+                
+                <form id="account-form">
+                    <div class="form-group">
+                        <label for="display-name">Display Name</label>
+                        <input type="text" id="display-name" placeholder="Your Name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" disabled>
+                        <small style="color: #64748b; margin-top: 5px; display: block;">Emails are managed by your provider (e.g., Google).</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
+                    <div id="account-message"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Supabase & Session Management -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="session.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!window.supabaseClient) return;
+
+            const { data: { session } } = await window.supabaseClient.auth.getSession();
+            if (!session) {
+                window.location.href = 'auth.html';
+                return;
+            }
+
+            const user = session.user;
+            const nameInput = document.getElementById('display-name');
+            const emailInput = document.getElementById('email');
+            const picImg = document.getElementById('account-pic');
+
+            // Populate fields
+            nameInput.value = user.user_metadata?.full_name || '';
+            emailInput.value = user.email;
+            
+            const avatarUrl = user.user_metadata?.avatar_url || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.user_metadata?.full_name || 'User');
+            picImg.src = avatarUrl;
+
+            // Handle Save
+            document.getElementById('account-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const newName = nameInput.value.trim();
+                const msg = document.getElementById('account-message');
+                const btn = document.getElementById('save-btn');
+
+                if (!newName) return;
+
+                btn.disabled = true;
+                btn.textContent = 'Saving...';
+
+                const { data, error } = await window.supabaseClient.auth.updateUser({
+                    data: { full_name: newName }
+                });
+
+                if (error) {
+                    msg.style.color = '#ef4444';
+                    msg.textContent = error.message;
+                } else {
+                    msg.style.color = '#10b981';
+                    msg.textContent = 'Display name updated successfully!';
+                    setTimeout(() => { window.location.reload(); }, 1500);
+                }
+
+                btn.disabled = false;
+                btn.textContent = 'Save Changes';
+            });
+        });
+    </script>
+</body>
+</html>
